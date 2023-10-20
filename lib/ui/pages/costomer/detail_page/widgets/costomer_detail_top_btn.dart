@@ -17,21 +17,28 @@ class Costomer_detail_top_btn extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
-                IconButton(onPressed: (){
-                  Navigator.pop(context);
-                }, icon: Icon(Icons.arrow_back),color: Colors.white,
+                IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(Icons.arrow_back),
+                  color: Colors.white,
                 ),
                 // Spacer(),
-                IconButton(onPressed: (){
-                }, icon: Icon(Icons.share),color: Colors.white,),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.share),
+                  color: Colors.white,
+                ),
               ],
             ),
           ),
-          OutlinedButton(onPressed: () {
-
-          }, child: Icon(Icons.aspect_ratio,color: Colors.white,)),
-
+          OutlinedButton(
+              onPressed: () {},
+              child: Icon(
+                Icons.aspect_ratio,
+                color: Colors.white,
+              )),
         ],
       ),
     );

@@ -13,9 +13,10 @@ class CostomerDetailBackGround extends StatelessWidget {
       height: header_height,
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/iceame.png",),fit: BoxFit.cover
-          )
-      ),
+              image: AssetImage(
+                "/images/iceame.png",
+              ),
+              fit: BoxFit.cover)),
     );
   }
 }
