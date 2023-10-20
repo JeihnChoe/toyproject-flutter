@@ -47,7 +47,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  share:
 
   flutter_lints: ^2.0.0
 
@@ -64,8 +64,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/images
-  #   - images/a_dot_ham.jpeg
+    - assets/images/iceame.png
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
