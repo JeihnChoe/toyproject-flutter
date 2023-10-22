@@ -1,4 +1,4 @@
-class Juice{
+class Product{
   final int code;
   final String kname; //한글이름
   final String ename; //영어이름
@@ -10,7 +10,7 @@ class Juice{
   // final String nutritionInformationId;
   String? allergyId;  // 알레르기 index
 
-  Juice({
+  Product({
     required this.code,
     required this.kname,
     required this.ename,
@@ -21,7 +21,7 @@ class Juice{
     required this.nutritionInformationId,
     this.allergyId,
 });
-  Juice ame = Juice(code: 1,kname: "아메리카노",
+  Product ame = Product(code: 1,kname: "아메리카노",
       ename: "Americano",
       price: 4500,
       iced: 3,
@@ -30,7 +30,7 @@ class Juice{
       nutritionInformationId: 1,
       allergyId: null);
 
-  Juice caffeLatte = Juice(code: 1,kname: "카페라떼",
+  Product caffeLatte = Product(code: 1,kname: "카페라떼",
       ename: "Caffe Latte",
       price: 5000,
       iced: 3,
@@ -39,7 +39,7 @@ class Juice{
       nutritionInformationId: 2,
       allergyId: "1");
 
-  Juice dolceLatte = Juice(code: 1,kname: "아메리카노",
+  Product dolceLatte = Product(code: 1,kname: "아메리카노",
       ename: "Dolce Latte",
       price: 5900,
       iced: 3,
@@ -48,7 +48,7 @@ class Juice{
       nutritionInformationId: 3,
       allergyId: "1");
 
-  Juice vanillaLatte = Juice(code: 1,kname: "바닐라라떼",
+  Product vanillaLatte = Product(code: 1,kname: "바닐라라떼",
       ename: "Vanilla Latte",
       price: 7000,
       iced: 3,
@@ -56,7 +56,7 @@ class Juice{
       content2: "리저브R 매장에서만 주문 가능한 음료입니다.",
       nutritionInformationId: 4,
       allergyId: "1");
-  Juice Affogato = Juice(code: 1,kname: "아포가토",
+  Product Affogato = Product(code: 1,kname: "아포가토",
       ename: "Affogato",
       price: 7000,
       iced: 1,
@@ -64,7 +64,7 @@ class Juice{
       content2: "리저브R 매장에서만 주문 가능한 음료입니다.",
       nutritionInformationId: 5,
       allergyId: "1");
-  Juice Frappuccino = Juice(code: 1,kname: "프라푸치노",
+  Product Frappuccino = Product(code: 1,kname: "프라푸치노",
       ename: "Frappuccino",
       price: 5500,
       iced: 1,
@@ -72,7 +72,7 @@ class Juice{
       content2: null,
       nutritionInformationId: 6,
       allergyId: null);
-  Juice Lemonade = Juice(code: 1,kname: "레모네이드",
+  Product Lemonade = Product(code: 1,kname: "레모네이드",
       ename: "Lemonade",
       price: 5900,
       iced: 1,
@@ -80,7 +80,7 @@ class Juice{
       content2: "토핑으로 들어간 딸기의 양은 조금씩 달라질 수 있습니다. 클래식 시럽을 추가하여 더욱 달콤하게 즐길 수 있습니다.",
       nutritionInformationId: 7,
       allergyId: null);
-  Juice jahuble = Juice(code: 1,kname: "자몽 허니 블랙 티",
+  Product jahuble = Product(code: 1,kname: "자몽 허니 블랙 티",
       ename: "Grapefruit Honey Black Tea",
       price: 5700,
       iced: 3,
@@ -88,7 +88,7 @@ class Juice{
       content2: null,
       nutritionInformationId: 8,
       allergyId: null);
-  Juice malchaTea = Juice(code: 1,kname: "말차 티",
+  Product malchaTea = Product(code: 1,kname: "말차 티",
       ename: "Malcha Tea",
       price: 6500,
       iced: 3,
@@ -97,7 +97,7 @@ class Juice{
       nutritionInformationId: 9,
       allergyId: "1");
 
-  Juice earlGrey = Juice(code: 1,kname: "얼그레이 티 ",
+  Product earlGrey = Product(code: 1,kname: "얼그레이 티 ",
       ename: "Earl Grey Brewed Tea",
       price: 4500,
       iced: 3,
@@ -105,7 +105,7 @@ class Juice{
       content2: "티백을 우리는 적정한 시간은 5분입니다.",
       nutritionInformationId: 10,
       allergyId: null);
-  Juice hibiscusTea = Juice(code: 1,kname: "히비스커스 블렌드 티",
+  Product hibiscusTea = Product(code: 1,kname: "히비스커스 블렌드 티",
       ename: "hibiscus Blend Brewed Tea",
       price: 4500,
       iced: 3,
@@ -113,7 +113,7 @@ class Juice{
       content2: "티백을 우리는 적정한 시간은 5분입니다.",
       nutritionInformationId: 11,
       allergyId: null);
-  Juice milkTea = Juice(code: 1,kname: "밀크티",
+  Product milkTea = Product(code: 1,kname: "밀크티",
       ename: "Milk Tea",
       price: 5900,
       iced: 3,

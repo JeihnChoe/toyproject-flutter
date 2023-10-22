@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:toyproject/_core/constants/style.dart';
+import 'package:toyproject/ui/widgets/custom_outline_btn.dart';
 
 import '../../../../../_core/constants/size.dart';
 
@@ -7,21 +10,93 @@ class CostomerDetailBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ListView(
-          children: [
-            TopImage(),
-            Container(),
-            Container(),
-            Container(),
-            Container(),
-            Container(),
-            Container(),
-          ],
-        ),
-        TextButton(onPressed: () {}, child: Text("주문하기"))
+    return CustomScrollView(
+      slivers: [
+        _DetailAppBar(context),
+        _body(),
       ],
+    );
+  }
+
+  SliverPadding _body() {
+    return SliverPadding(
+        padding: EdgeInsets.all(16.0), // 패딩 설정
+        sliver: SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              textTitle1("Title"),
+              textBody2("subtitle"),
+              SizedBox(height: 10),
+              textBody1("가나다라"),
+              SizedBox(height: 10),
+              textTitle1("6900원"),
+              SizedBox(height: 10),
+              // if (product.isIceOnly)
+              Row(
+                children: [
+                  Expanded(
+
+                    child: CustomOutlineButton("ICED ONLY", Color(0XFF1D77DE)),
+                  )],
+              ),
+              // else
+              // Row(
+              // children: [
+              // Expanded(child: CustomOutlineButton("ICE", kActiveColor1)),
+              // Expanded(child: CustomOutlineButton("HOT", kActiveColor2)),
+              // ],
+              // ),
+              SizedBox(height: 10),
+              Container(
+                padding: EdgeInsets.all(10),
+                width: double.infinity,
+                color: Colors.grey[100],
+                child: textBody3("title"),
+              ),
+              SizedBox(height: 300),
+            ],
+          ),
+        ),
+      );
+  }
+
+  SliverAppBar _DetailAppBar(BuildContext context) {
+    return SliverAppBar(
+      pinned: true,
+      elevation: 0.0,
+      leading: IconButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: Icon(Icons.arrow_back_ios),
+        color: Colors.white,
+      ),
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: Icon(CupertinoIcons.share),
+          color: Colors.white,
+        )
+      ],
+      iconTheme: IconThemeData(
+        color: Color(0XFF8F8F8F),
+      ),
+      expandedHeight: 300,
+      flexibleSpace: LayoutBuilder(builder: (context, constraints) {
+        final bool isCollapsed = constraints.maxHeight <= 80;
+        print("kToolbarHeight : $kToolbarHeight");
+        print("constraints.maxHeight : ${constraints.maxHeight}");
+        return FlexibleSpaceBar(
+          title: isCollapsed
+              ? Text(
+                  '가나다라',
+                  style: TextStyle(color: Colors.white),
+                )
+              : null,
+          background: TopImage(),
+        );
+      }),
     );
   }
 
@@ -30,79 +105,12 @@ class CostomerDetailBody extends StatelessWidget {
       width: double.infinity,
       height: header_height,
       decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(
-                "/images/iceame.png",
-              ),
-              fit: BoxFit.cover)),
+        image: DecorationImage(
+            image: AssetImage(
+              "assets/iceame.png",
+            ),
+            fit: BoxFit.cover),),
     );
   }
-
-//       children: [
-//         Stack(
-//           children: [
-//             CostomerDetailBackGround(),
-//             Costomer_detail_top_btn(),
-//             Padding(
-//               padding: const EdgeInsets.only(top: 350),
-//               child: Container(
-//                 width: double.infinity,
-//                 height: 500,
-//                 color: Colors.white,
-//                 child: Padding(
-//                   padding: const EdgeInsets.all(16.0),
-//                   child: Column(
-//                     crossAxisAlignment: CrossAxisAlignment.start,
-//                     children: [
-//                       CostomerDetailTitle("콜드 브루"),
-//                       CostomerDetailSubTitle("Cold Brew"),
-//                       SizedBox(height: mediumGap),
-//                       CostomerDetailContent1(
-//                           "스타벅스 바리스타의 정성으로 탄생한 콜드 브루!\n 콜드 브루 전용 원두를 차가운 물로 추출하여 한정된 양만 제공됩니다.\n실크같이 부드럽고 그윽한 초콜릿 풍미의 콜드 브루 만나보세요!"),
-//                       SizedBox(height: mediumGap),
-//                       CostomerDetailPrice(6900),
-//                       SizedBox(
-//                         width: double.infinity,
-//                         child: OutlinedButton(
-//                           onPressed: () {},
-//                           child: Text("ICED ONLY"),
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//               ),
-//             )
-//           ],
-//         ),
-//
-//         // PostDetailTitle("제목"),
-//         const SizedBox(height: largeGap),
-//         // PostDetailProfile(),
-//         // PostDetailButtons(),
-//         const Divider(),
-//         const SizedBox(height: largeGap),
-//         // PostDetailContent("내용"),
-//       ],
-//     );
-//     // );
-//   }
-// }
-//
-// class CostomerDetailPrice extends StatelessWidget {
-//   final int price;
-//   const CostomerDetailPrice(
-//     this.price, {
-//     super.key,
-//   });
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return SizedBox(
-//       child: Text(
-//         "${price}원",
-//         style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-//       ),
-//     );
-//   }
 }
+
